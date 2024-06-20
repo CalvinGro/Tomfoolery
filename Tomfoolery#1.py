@@ -112,8 +112,8 @@ while gameActive:
         #finds angle of the normal line counter_clockwise to the pos x-axis
         radAngle = math.atan2(collisionPt[1] - 300, collisionPt[0] - 300)
         BaseLineAngle = math.degrees(radAngle) % 360
-        previousAngle = (math.degrees(math.atan2(previousPt[1] - collisionPt[1],previousPt[0] - collisionPt[1]))) % 360
-        print(BaseLineAngle)
+        previousAngle = (math.degrees(math.atan2((previousPt[1]-300),(previousPt[0]-300)))) % 360
+        
 
         #determine if angle of bounce is left or right
         if previousAngle > BaseLineAngle:
@@ -136,4 +136,4 @@ while gameActive:
     Yvelocity += gravity
     pygame.display.flip()
 
-    clock.tick(10)
+    clock.tick(50)
